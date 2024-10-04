@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+
+  app-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-server
+    links:
+      - mysql
+      - postgres
+    depends_on:
+      - mysql
+      - postgres
+      - load_on_db
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    env_file: .env
+
+  #One-time command to pass in json format to mysql DB
+  load_on_db:
+    build:
+      context: ./docker/load_on_db
+      dockerfile: Dockerfile
+    container_name: load_on_db
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    volumes:
+      - ./docker/load_on_db/starships.json:/starships.json
+
+  mysql:
+    image: mysql:8.4.2
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: starfleet_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: vessels
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/postgres/schema.sql:/docker-entrypoint-initdb.d/schema.sql

@@ -1,0 +1,64 @@
+{
+  "starships": [
+    {
+      "name": "USS Enterprise",
+      "class": "Constitution",
+      "captain": "James T. Kirk",
+      "launched_year": 2245
+    },
+    {
+      "name": "USS Voyager",
+      "class": "Intrepid",
+      "captain": "Kathryn Janeway",
+      "launched_year": 2371
+    },
+    {
+      "name": "USS Defiant",
+      "class": "Defiant",
+      "captain": "Benjamin Sisko",
+      "launched_year": 2370
+    },
+    {
+      "name": "USS Discovery",
+      "class": "Crossfield",
+      "captain": "Gabriel Lorca",
+      "launched_year": 2256
+    },
+    {
+      "name": "USS Enterprise-D",
+      "class": "Galaxy",
+      "captain": "Jean-Luc Picard",
+      "launched_year": 2363
+    },
+    {
+      "name": "USS Excelsior",
+      "class": "Excelsior",
+      "captain": "Hikaru Sulu",
+      "launched_year": 2285
+    },
+    {
+      "name": "USS Franklin",
+      "class": "Freedom",
+      "captain": "Balthazar Edison",
+      "launched_year": 2164
+    },
+    {
+      "name": "USS Shenzhou",
+      "class": "Walker",
+      "captain": "Philippa Georgiou",
+      "launched_year": 2255
+    },
+    {
+      "name": "USS Reliant",
+      "class": "Miranda",
+      "captain": "Clark Terrell",
+      "launched_year": 2285
+    },
+    {
+      "name": "USS Kelvin",
+      "class": "Kelvin",
+      "captain": "Richard Robau",
+      "launched_year": 2233
+    }
+  ]
+}

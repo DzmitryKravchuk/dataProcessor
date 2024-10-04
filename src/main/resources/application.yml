@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: Production
+  datasource:
+    mysql:
+      driverClassName: ${MYSQL_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+      username: ${MYSQL_USER:admin}
+      password: ${MYSQL_PASSWORD:password}
+      endpoint: ${MYSQL_ENDPOINT:localhost:3306}
+      databaseName: ${MYSQL_DATABASE:starfleet_db}
+    postgres:
+      driverClassName: ${POSTGRES_DRIVER_CLASS_NAME:org.postgresql.Driver}
+      username: ${POSTGRES_USER:admin}
+      password: ${POSTGRES_PASSWORD:password}
+      endpoint: ${POSTGRES_ENDPOINT:localhost:5432}
+      databaseName: ${POSTGRES_DATABASE:vessels}
